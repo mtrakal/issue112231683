@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'  // FIXME: this caused issue: ERROR: Unable to resolve dependency for ':app@devBillingGoogleReleaseDebug/compileClasspath': Could not resolve project :liby.
-
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -16,12 +15,16 @@ android {
         defaultPublishConfig 'release'
 
         buildTypes {
+            debug {
+            }
             release {
                 minifyEnabled false
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             }
-        }
 
+            releaseDebug {
+            }
+        }
     }
 }
 
